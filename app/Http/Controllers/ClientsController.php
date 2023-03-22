@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Commande;
+use App\Models\Client;
 use Illuminate\Http\Request;
 
-class CommandesController extends Controller
+class ClientsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class CommandesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Commande $commande)
+    public function show(Client $client)
     {
         //
     }
@@ -42,7 +42,7 @@ class CommandesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Commande $commande)
+    public function edit(Client $client)
     {
         //
     }
@@ -50,7 +50,7 @@ class CommandesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Commande $commande)
+    public function update(Request $request, Client $client)
     {
         //
     }
@@ -58,24 +58,14 @@ class CommandesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Commande $commande)
+    public function destroy(Client $client)
     {
         //
     }
 
-    // Fonction permettant d'ajouter une commande
-    function ajouterCommande(Request $request)
-    {
-        // Code permettant de créer une commande
-        $idClient = $request->idClient;
-        $idProduit = $request->idProduit;
-        $quantite = $request->quantite;
-        $date = $request->date;
-    }
-
-    // Fonction permettant de lister les commandes d'un client
-    function commandesClient($idClient)
-    {
-        return response()->json(Commande::where('id_client', $idClient)->get());
-    }
+    // Fonction qui récupère toutes les commandes d'un client avec les produits de chaque commande
+    // function commandesClient($idClient)
+    // {
+    //     return response()->json(Client::find($idClient)->commandes()->with('produit')->get());
+    // }
 }
