@@ -67,15 +67,18 @@ class CommandesController extends Controller
     function ajouterCommande(Request $request)
     {
         // Code permettant de créer une commande
-        $idClient = $request->idClient;
-        $idProduit = $request->idProduit;
-        $quantite = $request->quantite;
-        $date = $request->date;
+        $commande = new Commande();
+        $commande->id_client = $request->id_client;
+        $commande->id_produit = $request->id_produit;
+        $commande->quantite = $request->quantite;
+        $commande->date = $request->date;
+        $commande->save();
+        return response()->json($commande);
     }
 
     // Fonction permettant de lister les commandes d'un client
     function commandesClient($idClient)
     {
-        return response()->json(Commande::where('id_client', $idClient)->get());
+        return response()->json(Commande::where('id_client', $idClient)->with('produit')->get());
     }
 }
