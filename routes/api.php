@@ -30,3 +30,5 @@ Route::post('/produits', [ProduitsController::class, "ajouter"]);
 
 //Ajouter une commande
 Route::post('/commandes', [CommandesController::class, "ajouterCommande"]);
+//Afficher toutes les commandes d'un client
+Route::post('/commandes/{id}', [CommandesController::class, "ajouterCommande"]);
