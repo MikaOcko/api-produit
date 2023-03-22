@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ProduitsController;
+use App\Http\Controllers\CommandesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,6 @@ Route::get('/produits', [ProduitsController::class, "liste"]);
 Route::get('/produits/{id}', [ProduitsController::class, "detail"]);
 //Ajouter un produit
 Route::post('/produits', [ProduitsController::class, "ajouter"]);
+
+//Ajouter une commande
+Route::post('/commandes', [CommandesController::class, "ajouterCommande"]);
