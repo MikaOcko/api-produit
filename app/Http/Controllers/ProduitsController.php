@@ -67,4 +67,25 @@ class ProduitsController extends Controller
     {
         return response()->json(Produit::all());
     }
+<<<<<<< Updated upstream
+=======
+
+    function detail($id)
+    {
+        // Code permettant d'obtenir le produit avec l'identifiant $id (find($id))
+        return response()->json(Produit::find($id));
+    }
+
+    function ajouter(Request $request)
+    {
+        $produit = new Produit();
+        $produit->nom = $request->nom;
+        $produit->description = $request->description;
+        $produit->lien_image = $request->lien_image;
+        $produit->prix = $request->prix;
+        $produit->tva = $request->tva;
+        $produit->save();
+        return response()->json($produit);
+    }
+>>>>>>> Stashed changes
 }
