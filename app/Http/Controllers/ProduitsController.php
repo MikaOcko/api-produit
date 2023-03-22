@@ -67,4 +67,10 @@ class ProduitsController extends Controller
     {
         return response()->json(Produit::all());
     }
+
+    function detail($id)
+    {
+        // Code permettant d'obtenir le produit avec l'identifiant $id (find($id))
+        return response()->json(Produit::find($id));
+    }
 }
