@@ -67,8 +67,6 @@ class ProduitsController extends Controller
     {
         return response()->json(Produit::all());
     }
-<<<<<<< Updated upstream
-=======
 
     function detail($id)
     {
@@ -87,5 +85,4 @@ class ProduitsController extends Controller
         $produit->save();
         return response()->json($produit);
     }
->>>>>>> Stashed changes
 }
