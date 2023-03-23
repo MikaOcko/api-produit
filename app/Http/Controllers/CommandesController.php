@@ -82,14 +82,14 @@ class CommandesController extends Controller
         return response()->json(Commande::where('id_client', $idClient)->with('produit')->get());
     }
 
-    // // Fonction permettant de lister toutes les commandes
-    // function commandesAll(Request $request)
-    // {
-    //     return response()->json(Commande::all());
-    // }
+    // Fonction permettant de lister toutes les commandes
+    function commandesAll(Request $request)
+    {
+        return response()->json(Commande::all());
+    }
 
     function supprimerCommande($idCommande)
     {
-        Commande::where('id', $idCommande)->destroy($idCommande);
+        Commande::destroy('id', $idCommande);
     }
 }
