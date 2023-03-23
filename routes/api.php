@@ -32,5 +32,7 @@ Route::post('/produits', [ProduitsController::class, "ajouter"]);
 Route::post('/commandes', [CommandesController::class, "ajouterCommande"]);
 //Afficher toutes les commandes d'un client
 Route::get('/commandes/{idClient}', [CommandesController::class, "commandesClient"]);
-// Afficher toutes les commandes de tous les clients
-Route::get('/commandesall', [CommandesController::class, "commandesAll"]);
+// // Afficher toutes les commandes de tous les clients
+// Route::get('/commandesall', [CommandesController::class, "commandesAll"]);
+// Supprimer une commande
+Route::delete('/commandes/{idClient}', [CommandesController::class, "supprimerCommande"]);

@@ -21,6 +21,8 @@ class DatabaseSeeder extends Seeder
 
         // \App\Models\Client::factory()->count(50)->create();
 
-        \App\Models\Produit::factory()->count(50)->create();
+        // \App\Models\Produit::factory()->count(50)->create();
+
+        \App\Models\Commande::factory()->count(50)->create();
     }
 }
